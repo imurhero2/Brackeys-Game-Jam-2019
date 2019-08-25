@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Pierre's Folder/Pierre's Scenes/Menu.unity
+    guid: 0fada7a315812514aaa01ee64c7d97ec
+  - enabled: 1
+    path: Assets/Pierre's Folder/Pierre's Scenes/Pierre's Scene.unity
+    guid: 6983efb69a5ad8341a16756b8acb3117
   m_configObjects: {}
