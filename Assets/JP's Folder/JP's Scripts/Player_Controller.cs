@@ -6,10 +6,12 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float jumpForce = 400f;
     [Range(0, 1)] [SerializeField] private float crouchSpeed = .36f;
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
+    [Range(0, 10f)][SerializeField] private float climbSpeed = 1;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform ceilingCheck;
     [SerializeField] private Collider2D crouchDisableCollider;
+    
 
     const float ceilingRadius = 1f;
     const float groundedRadius = .2f;
@@ -38,6 +40,7 @@ public class Player_Controller : MonoBehaviour
 
     public void FixedUpdate()
     {
+        ClimbLadder();
         bool wasGrounded = grounded;
         grounded = false;
 
@@ -120,5 +123,14 @@ public class Player_Controller : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    private void ClimbLadder()
+    {
+        if(!crouchDisableCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) { return; }
+
+        float climb = Input.GetAxis("Vertical");
+        Vector2 climbVelocity = new Vector2(playerRigidBody.velocity.x, climb * climbSpeed);
+        playerRigidBody.velocity = climbVelocity;
     }
 }
