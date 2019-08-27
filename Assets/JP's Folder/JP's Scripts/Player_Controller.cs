@@ -52,6 +52,7 @@ public class Player_Controller : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 grounded = true;
+                myAnimator.SetBool("isClimbing", false);
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
             }
@@ -70,6 +71,7 @@ public class Player_Controller : MonoBehaviour
 
         if (grounded)
         {
+            
             if (crouch)
             {
                 if (!wasCrouching)
@@ -139,12 +141,7 @@ public class Player_Controller : MonoBehaviour
         float climb = Input.GetAxis("Vertical");
         Vector2 climbVelocity = new Vector2(playerRigidBody.velocity.x, climb * climbSpeed);
         playerRigidBody.velocity = climbVelocity;
-        if (climb != 0)
-        {
-            myAnimator.SetBool("isClimbing", true);
-        } else
-        {
-            myAnimator.SetBool("isClimbing", false);
-        }
+        myAnimator.SetBool("isClimbing", true);
+        myAnimator.SetFloat("climb", climb);
     }
 }
