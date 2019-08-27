@@ -296,6 +296,7 @@ MonoBehaviour:
   groundCheck: {fileID: 931665434699673169}
   ceilingCheck: {fileID: 931665433472797412}
   crouchDisableCollider: {fileID: 931665434289639746}
+  myAnimator: {fileID: 1375771331025912379}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []

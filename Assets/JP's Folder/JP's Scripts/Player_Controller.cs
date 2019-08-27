@@ -11,7 +11,9 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform ceilingCheck;
     [SerializeField] private Collider2D crouchDisableCollider;
-    
+    [SerializeField] private Animator myAnimator;
+
+
 
     const float ceilingRadius = 1f;
     const float groundedRadius = .2f;
@@ -97,6 +99,11 @@ public class Player_Controller : MonoBehaviour
             }
         }
 
+        if (!crouch)
+        {
+            myAnimator.SetFloat("run", Mathf.Abs(move));
+        }
+
         Vector3 targetVelocity = new Vector2(move * 10f, playerRigidBody.velocity.y);
         playerRigidBody.velocity = Vector3.SmoothDamp(playerRigidBody.velocity, targetVelocity, ref playerVelocity, movementSmoothing);
 
@@ -132,5 +139,12 @@ public class Player_Controller : MonoBehaviour
         float climb = Input.GetAxis("Vertical");
         Vector2 climbVelocity = new Vector2(playerRigidBody.velocity.x, climb * climbSpeed);
         playerRigidBody.velocity = climbVelocity;
+        if (climb != 0)
+        {
+            myAnimator.SetBool("isClimbing", true);
+        } else
+        {
+            myAnimator.SetBool("isClimbing", false);
+        }
     }
 }
