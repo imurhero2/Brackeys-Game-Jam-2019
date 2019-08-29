@@ -14,7 +14,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private Animator myAnimator;
 
 
-
+    public bool isDead = false;
     const float ceilingRadius = 1f;
     const float groundedRadius = .2f;
     private bool grounded;
@@ -61,68 +61,68 @@ public class Player_Controller : MonoBehaviour
 
     public void Move(float move, bool crouch, bool jump)
     {
-        if (!crouch)
-        {
-            if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
+            if (!crouch)
             {
-                crouch = true;
-            }
-        }
-
-        if (grounded)
-        {
-            
-            if (crouch)
-            {
-                if (!wasCrouching)
+                if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
                 {
-                    wasCrouching = true;
-                    OnCrouchEvent.Invoke(true);
-                }
-
-                move *= crouchSpeed;
-
-                if (crouchDisableCollider != null)
-                {
-                    crouchDisableCollider.enabled = false;
+                    crouch = true;
                 }
             }
-            else
+
+            if (grounded)
             {
-                if (crouchDisableCollider != null)
+
+                if (crouch)
                 {
-                    crouchDisableCollider.enabled = true;
+                    if (!wasCrouching)
+                    {
+                        wasCrouching = true;
+                        OnCrouchEvent.Invoke(true);
+                    }
+
+                    move *= crouchSpeed;
+
+                    if (crouchDisableCollider != null)
+                    {
+                        crouchDisableCollider.enabled = false;
+                    }
                 }
-                if (wasCrouching)
+                else
                 {
-                    wasCrouching = false;
-                    OnCrouchEvent.Invoke(false);
+                    if (crouchDisableCollider != null)
+                    {
+                        crouchDisableCollider.enabled = true;
+                    }
+                    if (wasCrouching)
+                    {
+                        wasCrouching = false;
+                        OnCrouchEvent.Invoke(false);
+                    }
                 }
             }
-        }
 
-        if (!crouch)
-        {
-            myAnimator.SetFloat("run", Mathf.Abs(move));
-        }
+            if (!crouch)
+            {
+                myAnimator.SetFloat("run", Mathf.Abs(move));
+            }
 
-        Vector3 targetVelocity = new Vector2(move * 10f, playerRigidBody.velocity.y);
-        playerRigidBody.velocity = Vector3.SmoothDamp(playerRigidBody.velocity, targetVelocity, ref playerVelocity, movementSmoothing);
+            Vector3 targetVelocity = new Vector2(move * 10f, playerRigidBody.velocity.y);
+            playerRigidBody.velocity = Vector3.SmoothDamp(playerRigidBody.velocity, targetVelocity, ref playerVelocity, movementSmoothing);
 
-        if (move > 0 && !facingRight)
-        {
-            FlipSprite();
-        }
-        else if (move < 0 && facingRight)
-        {
-            FlipSprite();
-        }
+            if (move > 0 && !facingRight)
+            {
+                FlipSprite();
+            }
+            else if (move < 0 && facingRight)
+            {
+                FlipSprite();
+            }
 
-        if (grounded && jump)
-        {
-            grounded = false;
-            playerRigidBody.AddForce(new Vector2(0f, jumpForce));
-        }
+            if (grounded && jump)
+            {
+                grounded = false;
+                playerRigidBody.AddForce(new Vector2(0f, jumpForce));
+            }
     }
 
     private void FlipSprite()
