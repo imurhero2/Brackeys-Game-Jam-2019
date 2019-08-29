@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 931665434289639750}
   - component: {fileID: 931665434289639748}
   - component: {fileID: 931665434289639749}
+  - component: {fileID: 7296776113829236349}
   - component: {fileID: 931665434289639746}
   - component: {fileID: 931665434289639747}
   m_Layer: 9
@@ -160,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 931665434289639736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.4, z: 0}
-  m_LocalScale: {x: 0.66929, y: 0.66929, z: 0.66929}
+  m_LocalScale: {x: 0.6157468, y: 0.6157468, z: 0.6157468}
   m_Children:
   - {fileID: 931665433351981250}
   - {fileID: 931665434699673169}
@@ -237,6 +238,32 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Player_Controller+BoolEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!61 &7296776113829236349
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931665434289639736}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.10812664, y: -1.0272036}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5766754, y: 3.0544071}
+  m_EdgeRadius: 0
 --- !u!61 &931665434289639746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250,7 +277,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.029260516, y: 0.6827735}
+  m_Offset: {x: 0.029260516, y: 0.38404137}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -261,7 +288,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4805148, y: 3.3146608}
+  m_Size: {x: 2.4805148, y: 3.912125}
   m_EdgeRadius: 0
 --- !u!58 &931665434289639747
 CircleCollider2D:
