@@ -46,6 +46,8 @@ public class Player_Controller : MonoBehaviour
         bool wasGrounded = grounded;
         grounded = false;
 
+        myAnimator.SetFloat("jump", playerRigidBody.velocity.y);
+
         Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
         for (int i = 0; i < colliders.Length; i++)
         {
@@ -63,17 +65,24 @@ public class Player_Controller : MonoBehaviour
     {
             if (!crouch)
             {
+                myAnimator.SetBool("crouch", false);
                 if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
                 {
                     crouch = true;
                 }
             }
 
+            if (crouch)
+            {
+                myAnimator.SetBool("crouch", true);
+            }
+
             if (grounded)
             {
+                myAnimator.SetBool("grounded", true);
 
                 if (crouch)
-                {
+                    {
                     if (!wasCrouching)
                     {
                         wasCrouching = true;
@@ -122,7 +131,10 @@ public class Player_Controller : MonoBehaviour
             {
                 grounded = false;
                 playerRigidBody.AddForce(new Vector2(0f, jumpForce));
+                myAnimator.SetBool("grounded", false);
             }
+
+        
     }
 
     private void FlipSprite()

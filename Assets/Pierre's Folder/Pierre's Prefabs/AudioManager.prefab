@@ -80,3 +80,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: a0762cbaeccafd54882ca2c399c0b081, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Duck
+    clip: {fileID: 8300000, guid: 60aab9fe3b359a041b4ec15df4b260cb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Goose
+    clip: {fileID: 8300000, guid: 21550466f6d7ee54cb0d222efb04ee79, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

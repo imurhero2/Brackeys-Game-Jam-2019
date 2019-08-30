@@ -8,6 +8,7 @@ TagManager:
   - PlayerAnimator
   - Floppy
   - Shredder
+  - Stop
   layers:
   - Default
   - TransparentFX
@@ -21,10 +22,10 @@ TagManager:
   - Player
   - Ladder
   - Spikes
-  - 
-  - 
-  - 
-  - 
+  - Projectiles
+  - Enemy
+  - GooseStop
+  - EnemyWeakness
   - 
   - 
   - 

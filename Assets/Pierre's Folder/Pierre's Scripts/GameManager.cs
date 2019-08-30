@@ -47,9 +47,8 @@ public class GameManager : MonoBehaviour
         //Turn off Player_Movement
         movement.enabled = false;
         playerRB.velocity = new Vector3(0, playerRB.velocity.y, 0);
-        playerCollider.enabled = false;
         playerBoxCollider.enabled = false;
-        playerRB.bodyType = RigidbodyType2D.Static;
+        
         deathCount += 1;
         //Check death count and Spawn new Player based on damage
         StartCoroutine(WaitForRespawn());

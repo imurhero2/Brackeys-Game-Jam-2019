@@ -28,7 +28,7 @@ public class Spikes : MonoBehaviour
             manager.KillPlayer();
             playerAnimator.SetBool("diced", true);
             playerAnimator.SetBool("isDead", true);
-
+            collider.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             ladder.SetActive(true);
             FindObjectOfType<AudioManager>().Stop();
             FindObjectOfType<AudioManager>().Play("1-1 Spike Death");
