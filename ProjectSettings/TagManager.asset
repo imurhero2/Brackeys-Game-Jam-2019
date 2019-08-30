@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Spawn
   - PlayerAnimator
+  - Floppy
+  - Shredder
   layers:
   - Default
   - TransparentFX
