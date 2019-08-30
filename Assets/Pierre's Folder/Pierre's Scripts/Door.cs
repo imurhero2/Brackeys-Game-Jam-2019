@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private GameObject prompt;
     [SerializeField] private GameManager manager;
+    [SerializeField] private GameObject prompt;
+    [SerializeField] private NarrationManager1 nManager;
     private bool inRange;
     
     void Update()
@@ -31,8 +32,19 @@ public class Door : MonoBehaviour
     private void KillPlayer()
     {
         Debug.Log("DED");
-        //Play VO
+        FindObjectOfType<AudioManager>().Stop();
+        FindObjectOfType<AudioManager>().Play("1-1 Door Death");
         //Play Animation
         manager.KillPlayer();
+        if (!nManager.spikeDeath)
+        {
+            StartCoroutine(WaitForNarration());
+        }
+    }
+
+    IEnumerator WaitForNarration()
+    {
+        yield return new WaitForSeconds(15);
+        FindObjectOfType<AudioManager>().Play("1-1 Spike Reminder");
     }
 }

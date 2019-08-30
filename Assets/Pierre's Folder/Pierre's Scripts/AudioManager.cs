@@ -33,6 +33,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        Play("music");
+    }
+
     public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -42,5 +47,16 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+    }
+
+    public void Stop()
+    {
+        foreach (Sound s in sounds)
+        {
+            if(s.name != "music")
+            {
+                s.source.Stop();
+            }
+        }
     }
 }

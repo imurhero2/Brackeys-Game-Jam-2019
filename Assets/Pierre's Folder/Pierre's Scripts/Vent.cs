@@ -1,18 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Vent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject prompt;
+    private bool inRange;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (inRange == true && Input.GetButtonDown("Interact"))
+        {
+            BeatLevel();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        inRange = true;
+        prompt.SetActive(true);
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        inRange = false;
+        prompt.SetActive(false);
+    }
+
+    private void BeatLevel()
+    {
+        Debug.Log("Complete");
+        //Load Next Scene
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

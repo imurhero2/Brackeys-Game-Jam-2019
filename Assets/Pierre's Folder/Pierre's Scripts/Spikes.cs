@@ -8,6 +8,9 @@ public class Spikes : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private CircleCollider2D playerCollider;
     [SerializeField] private BoxCollider2D playerBoxCollider;
+    [SerializeField] private Rigidbody2D playerRB;
+    [SerializeField] private NarrationManager1 nManager;
+    [SerializeField] private GameObject ladder;
 
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -24,10 +27,12 @@ public class Spikes : MonoBehaviour
         {
             manager.KillPlayer();
             playerAnimator.SetBool("diced", true);
-            playerCollider.enabled = false;
-            playerBoxCollider.enabled = true;
-            //Enable Ladder
-            //Play Spike Death Voice Over
+            playerAnimator.SetBool("isDead", true);
+
+            ladder.SetActive(true);
+            FindObjectOfType<AudioManager>().Stop();
+            FindObjectOfType<AudioManager>().Play("1-1 Spike Death");
+            nManager.spikeDeath = true;
         }
     }
 }
