@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Chair : MonoBehaviour
 {
@@ -40,16 +40,32 @@ public class Chair : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Stop();
         StartCoroutine(StartNaration());
+        StartCoroutine(SecondNarration());
+        StartCoroutine(NextScene());
         player.GetComponent<SpriteRenderer>().enabled = false;
         gManager.KillPlayer();
 
-        //Load Next Scene
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
     }
 
     IEnumerator StartNaration()
     {
         yield return new WaitForSeconds(1);
         FindObjectOfType<AudioManager>().Play("Chair Death");
+        FindObjectOfType<AudioManager>().Play("Chair Eat");
+    }
+
+    IEnumerator SecondNarration()
+    {
+        yield return new WaitForSeconds(5);
+        FindObjectOfType<AudioManager>().Play("Move On");
+    }
+
+    IEnumerator NextScene()
+    {
+        yield return new WaitForSeconds(9);
+        //Load Next Scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //Debug.Log("Next");
     }
 }

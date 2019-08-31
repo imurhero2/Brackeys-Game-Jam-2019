@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
@@ -12,12 +10,20 @@ public class Spikes : MonoBehaviour
     [SerializeField] private NarrationManager1 nManager;
     [SerializeField] private GameObject ladder;
 
+    private Door door;
+
+    void Awake()
+    {
+        door = FindObjectOfType<Door>();
+    }
+
 
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Player")
         {
             //Play Spike Enter Voice Over
+            door.inSpikes = true;
             FindObjectOfType<AudioManager>().Stop();
             FindObjectOfType<AudioManager>().Play("Spikes Fine");
         }
@@ -34,6 +40,7 @@ public class Spikes : MonoBehaviour
             ladder.SetActive(true);
             FindObjectOfType<AudioManager>().Stop();
             FindObjectOfType<AudioManager>().Play("1-1 Spike Death");
+            FindObjectOfType<AudioManager>().Play("Spikes");
             nManager.spikeDeath = true;
         }
     }

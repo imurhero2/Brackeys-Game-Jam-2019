@@ -9,6 +9,7 @@ TagManager:
   - Floppy
   - Shredder
   - Stop
+  - Slice
   layers:
   - Default
   - TransparentFX

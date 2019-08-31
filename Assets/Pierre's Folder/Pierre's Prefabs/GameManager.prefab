@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathCount: 0
-  movement: {fileID: 931665434289639750, guid: 3724c192b6f7ccf419ff77a8b6d31c2c, type: 3}
-  player: {fileID: 931665434289639736, guid: 3724c192b6f7ccf419ff77a8b6d31c2c, type: 3}
-  spawnPoint: {fileID: 0}
-  playerRigidBody: {fileID: 931665434289639748, guid: 3724c192b6f7ccf419ff77a8b6d31c2c,
-    type: 3}
+  noDrinks: 1
+  vent: 0
+  spawnTimer: 10

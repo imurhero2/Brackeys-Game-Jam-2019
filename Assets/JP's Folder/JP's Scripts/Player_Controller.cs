@@ -75,7 +75,8 @@ public class Player_Controller : MonoBehaviour
             if (crouch)
             {
                 myAnimator.SetBool("crouch", true);
-            }
+            myAnimator.SetFloat("jump", 0);
+        }
 
             if (grounded)
             {
@@ -129,10 +130,12 @@ public class Player_Controller : MonoBehaviour
 
             if (grounded && jump)
             {
+                
                 grounded = false;
                 playerRigidBody.AddForce(new Vector2(0f, jumpForce));
                 myAnimator.SetBool("grounded", false);
-            }
+                
+        }
 
         
     }
@@ -148,7 +151,7 @@ public class Player_Controller : MonoBehaviour
 
     private void ClimbLadder()
     {
-        if(!crouchDisableCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) { return; }
+        if(!crouchDisableCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) { myAnimator.SetBool("isClimbing", false);  return; }
 
         float climb = Input.GetAxis("Vertical");
         Vector2 climbVelocity = new Vector2(playerRigidBody.velocity.x, climb * climbSpeed);

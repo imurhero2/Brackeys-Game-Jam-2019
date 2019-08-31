@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChairWin : MonoBehaviour
 {
@@ -32,12 +32,28 @@ public class ChairWin : MonoBehaviour
     {
         Debug.Log("Complete");
         FindObjectOfType<AudioManager>().Stop();
+        FindObjectOfType<AudioManager>().Play("Chair Bop");
         FindObjectOfType<AudioManager>().Play("Chair Win");
+        
         platform.SetActive(false);
-        winBox.SetActive(false);
+        winBox.GetComponent<BoxCollider2D>().enabled = false;
         chair.GetComponent<BoxCollider2D>().enabled = false;
         chairAnim.SetBool("destroy", true);
+        StartCoroutine(NextScene());
+        StartCoroutine(SecondNarration());
+    }
+
+    IEnumerator SecondNarration()
+    {
+        yield return new WaitForSeconds(7);
+        FindObjectOfType<AudioManager>().Play("Move On");
+    }
+
+    IEnumerator NextScene()
+    {
+        yield return new WaitForSeconds(10);
         //Load Next Scene
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //Debug.Log("Next");
     }
 }

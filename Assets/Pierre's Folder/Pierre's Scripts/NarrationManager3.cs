@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NarrationManager3 : MonoBehaviour
@@ -15,6 +14,7 @@ public class NarrationManager3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gManager.ResetPlayer();
         if (gManager.noDrinks)
         {
             FindObjectOfType<AudioManager>().Play("No Drinks");

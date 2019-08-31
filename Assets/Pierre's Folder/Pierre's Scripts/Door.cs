@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -10,6 +9,7 @@ public class Door : MonoBehaviour
     [SerializeField] private GameObject explosion;
     [SerializeField] private SpriteRenderer player;
     private bool inRange;
+    public bool inSpikes = false;
     
     void Update()
     {
@@ -33,6 +33,7 @@ public class Door : MonoBehaviour
 
     private void KillPlayer()
     {
+        
         Debug.Log("DED");
         explosion.SetActive(true);
         StartCoroutine(RemoveExplosion());
@@ -40,6 +41,7 @@ public class Door : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
         FindObjectOfType<AudioManager>().Stop();
+        FindObjectOfType<AudioManager>().Play("Explode");
         FindObjectOfType<AudioManager>().Play("1-1 Door Death");
         //Play Animation
         manager.KillPlayer();
@@ -52,7 +54,10 @@ public class Door : MonoBehaviour
     IEnumerator WaitForNarration()
     {
         yield return new WaitForSeconds(15);
-        FindObjectOfType<AudioManager>().Play("1-1 Spike Reminder");
+        if (!inSpikes)
+        {
+            FindObjectOfType<AudioManager>().Play("1-1 Spike Reminder");
+        }
     }
 
     IEnumerator RemoveExplosion()

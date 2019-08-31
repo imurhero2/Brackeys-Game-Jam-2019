@@ -11,6 +11,8 @@ public class GooseAttack : MonoBehaviour
     [SerializeField] GameObject spawnPoint;
     [SerializeField] GameObject boundary;
     [SerializeField] GameObject daze;
+    [SerializeField] GameObject playerDeath;
+    [SerializeField] SpriteRenderer playerSprite;
     private GooseMovement movement;
 
     void Awake()
@@ -23,11 +25,15 @@ public class GooseAttack : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("Single Honk");
+            FindObjectOfType<AudioManager>().Play("Generic Death");
             Debug.Log("Kill Player");
             daze.SetActive(false);
             gManager.KillPlayer();
             gooseBody.velocity = new Vector2(0f, 0f);
-            //gooseAnim.setBool("kill", true);
+            playerDeath.SetActive(true);
+            playerSprite.enabled = false; 
+            gooseAnim.SetBool("kill", true);
             StartCoroutine(SpawnGoose());
         }
     }
@@ -40,9 +46,10 @@ public class GooseAttack : MonoBehaviour
 
     private void Respawn()
     {
+        playerDeath.SetActive(false);
         boundary.SetActive(false);
         daze.SetActive(true);
-        //gooseAnim.setBool("kill", false);
+        gooseAnim.SetBool("kill", false);
         //gooseAnim.setBool("isAttacking", true);
         if (movement.facingRight)
         {

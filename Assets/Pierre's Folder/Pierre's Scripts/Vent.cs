@@ -6,7 +6,13 @@ using UnityEngine.SceneManagement;
 public class Vent : MonoBehaviour
 {
     [SerializeField] private GameObject prompt;
+    private GameManager gManager;
     private bool inRange;
+
+    void Awake()
+    {
+        gManager = FindObjectOfType<GameManager>();
+    }
 
     void Update()
     {
@@ -31,7 +37,9 @@ public class Vent : MonoBehaviour
     private void BeatLevel()
     {
         Debug.Log("Complete");
+        gManager.vent = true;
         //Load Next Scene
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        FindObjectOfType<AudioManager>().Stop();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

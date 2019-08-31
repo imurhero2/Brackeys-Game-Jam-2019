@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Floppy : MonoBehaviour
@@ -7,12 +6,16 @@ public class Floppy : MonoBehaviour
     private NarrationManager4 nManager;
     private GameManager gManager;
     private int waitSeconds = 0;
+    private SpriteRenderer player;
+    private SpriteRenderer split;
     
 
     void Awake()
     {
         gManager = FindObjectOfType<GameManager>();
         nManager = FindObjectOfType<NarrationManager4>();
+        split = GameObject.FindGameObjectWithTag("Slice").GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("PlayerAnimator").GetComponent<SpriteRenderer>();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -20,6 +23,8 @@ public class Floppy : MonoBehaviour
         if(collider.gameObject.tag == "Player" && nManager.hit == false)
         {
             nManager.hit = true;
+            FindObjectOfType<AudioManager>().Play("Floppy Slice");
+            FindObjectOfType<AudioManager>().Play("Generic Death");
             KillPlayer();
         }
     }
@@ -29,6 +34,9 @@ public class Floppy : MonoBehaviour
         Debug.Log("Kill Player");
         gManager.KillPlayer();
         nManager.throwing = false;
+        player.enabled = false;
+        split.enabled =true;
+        StartCoroutine(RemoveDeath());
         
         nManager.thrown = 0;
         if (!nManager.floppyDeath)
@@ -51,5 +59,11 @@ public class Floppy : MonoBehaviour
         yield return new WaitForSeconds(waitSeconds);
         nManager.throwing = true;
         nManager.hit = false;
+    }
+
+    IEnumerator RemoveDeath()
+    {
+        yield return new WaitForSeconds(10);
+        split.enabled = false;
     }
 }

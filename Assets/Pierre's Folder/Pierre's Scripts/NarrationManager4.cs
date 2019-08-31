@@ -18,10 +18,14 @@ public class NarrationManager4 : MonoBehaviour
     [SerializeField] GameObject spawnPointHi2;
     [SerializeField] GameObject spawnPointLow;
 
+    private GameManager gManager;
+
     void Awake()
     {
         FindObjectOfType<AudioManager>().StopMusic("music");
         FindObjectOfType<AudioManager>().Play("Broken Music");
+        gManager = FindObjectOfType<GameManager>();
+        gManager.ResetPlayer();
     }
 
     void Start()
@@ -76,6 +80,7 @@ public class NarrationManager4 : MonoBehaviour
             FindObjectOfType<AudioManager>().StopMusic("Broken Music");
             FindObjectOfType<AudioManager>().Play("Boss Music");
             FindObjectOfType<AudioManager>().Play("Goose");
+            FindObjectOfType<AudioManager>().Play("Banjo");
             StartCoroutine(SpawnGoose());
         }
     }

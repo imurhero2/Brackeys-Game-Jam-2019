@@ -11,7 +11,8 @@ public class LadderWin : MonoBehaviour
         {
             Debug.Log("Win");
             //Load Scene
-            //SceneManager.LoadScene(3);
+            FindObjectOfType<AudioManager>().Stop();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

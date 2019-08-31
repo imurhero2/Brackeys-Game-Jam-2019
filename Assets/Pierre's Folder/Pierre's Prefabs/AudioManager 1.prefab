@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6735077306459231891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6735077306459231890}
+  - component: {fileID: 6735077306459231893}
+  m_Layer: 0
+  m_Name: AudioManager 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6735077306459231890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735077306459231891}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8464, y: 0.8464, z: 0.8464}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6735077306459231893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735077306459231891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad123003805e0d44a84adf0cb4c5227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: music
+    clip: {fileID: 8300000, guid: d88c18dd1e6c7f24eb45d113fc7b1e60, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: 1-1 intro
+    clip: {fileID: 8300000, guid: d05d9d71513982e46b5309b958406819, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: 1-1 Spike Death
+    clip: {fileID: 8300000, guid: 80736f7fa90ca9946a1497bb1375c005, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: 1-1 Door Death
+    clip: {fileID: 8300000, guid: 652c69276073da74e887c6f69ae20dc2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: 1-1 Spike Reminder
+    clip: {fileID: 8300000, guid: 39c9bc0b54cfe8a48833c0ccb759101e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: No Drinks
+    clip: {fileID: 8300000, guid: 0ac64199602276b4ab1a9bfaea87c481, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: a0762cbaeccafd54882ca2c399c0b081, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Duck
+    clip: {fileID: 8300000, guid: 60aab9fe3b359a041b4ec15df4b260cb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Goose
+    clip: {fileID: 8300000, guid: 21550466f6d7ee54cb0d222efb04ee79, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Disk Death
+    clip: {fileID: 8300000, guid: 6b70ebce64df6504ebd17fdf4bc98b46, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Disk Death 2
+    clip: {fileID: 8300000, guid: b76b3eccbcdf28b4fb1c64f208ab1b08, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: 1-3 Intro
+    clip: {fileID: 8300000, guid: db548d723cc2b8e4b96e705faf17eea2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Chair Death
+    clip: {fileID: 8300000, guid: 4118add38c223ac4cbacbc2d79964c22, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Chair Win
+    clip: {fileID: 8300000, guid: ae5d83e0d05088741afaea99a4de3f9e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: 1-4 Intro
+    clip: {fileID: 8300000, guid: 5750026ae62e36f4398df7b16ebc73ab, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Chair Win
+    clip: {fileID: 8300000, guid: ae5d83e0d05088741afaea99a4de3f9e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Broken Music
+    clip: {fileID: 8300000, guid: f37941baee92e924b956460a260c2ff7, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Boss Music
+    clip: {fileID: 8300000, guid: 38170344e99e2da47a759e4570591c6b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Spikes Fine
+    clip: {fileID: 8300000, guid: 998c7ecba0954b141aacdcbf7443e28e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: 1-2 Intro
+    clip: {fileID: 8300000, guid: 475a3e78f1ac90f499fe10612dbd2419, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Muscle Drink
+    clip: {fileID: 8300000, guid: 58c36334e55b3744186473403dde1313, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Cosmo Drink
+    clip: {fileID: 8300000, guid: b7e75f506b9d5334bb242205377aa097, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: XXX Drink
+    clip: {fileID: 8300000, guid: a4cf71d04efa78a42a5b2fac0fdedf53, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: All Drank
+    clip: {fileID: 8300000, guid: ccf4d15cd5295c9478b0c32e2fd3e5aa, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: First Death
+    clip: {fileID: 8300000, guid: 0b0bc8a527130874ab661c6483ab35c5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Second Death
+    clip: {fileID: 8300000, guid: 6528375014b90ec4583f233f35d762a3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Second Death 2
+    clip: {fileID: 8300000, guid: c28e552b36975974394cf715d6d06cb0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Move On
+    clip: {fileID: 8300000, guid: a6902db2e0802394a9a1417d278cf90c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Game Win
+    clip: {fileID: 8300000, guid: 69e763cd3c4ee8a4ca2919915e97ea7b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Credits
+    clip: {fileID: 8300000, guid: 7811557ad771b234d833e5e35e98611a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Acid Death
+    clip: {fileID: 8300000, guid: 621f4021ae73ba3479d7ac3efc7e5bc5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Chair Eat
+    clip: {fileID: 8300000, guid: 6bb1fdaeb9c17574095c5170407649d4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Drink Gulp
+    clip: {fileID: 8300000, guid: c138ca3c12701e046ad1b83a9bb2bdbd, type: 3}
+    volume: 0.71
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Muscle Death
+    clip: {fileID: 8300000, guid: ac80e45508bc78d4c8caf2601721f981, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Generic Death
+    clip: {fileID: 8300000, guid: 5bf7b256d8b8dd448812f3327de173e9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Singularity Death
+    clip: {fileID: 8300000, guid: 44eaa79ffe0a3a8428b6f2f7c4a3a7ef, type: 3}
+    volume: 0.478
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Single Honk
+    clip: {fileID: 8300000, guid: 4c03d600fb1ffd24b9a1386f4f35156b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Banjo
+    clip: {fileID: 8300000, guid: bf1d0a74e7ac2d3438194b1b8b3756c9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Goose Dazed
+    clip: {fileID: 8300000, guid: ba4183d3732aa5b4b8b4fae1bc4795a3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Singularity
+    clip: {fileID: 8300000, guid: 9d03ef585b96e114394e5b6c3b17e922, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Spikes
+    clip: {fileID: 8300000, guid: f0d8e4862f5ca0a4a9b55d45f6b7f7ca, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Explode
+    clip: {fileID: 8300000, guid: 8e0a7f28bc2989645a8214f45a61cbe4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Chair Bop
+    clip: {fileID: 8300000, guid: a1334f56dcdea83489831a33407ee776, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Floppy Slice
+    clip: {fileID: 8300000, guid: ac17ed9e81534ea45abe3778826651a9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

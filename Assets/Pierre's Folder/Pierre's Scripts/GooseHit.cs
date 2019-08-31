@@ -37,6 +37,7 @@ public class GooseHit : MonoBehaviour
             player.AddForce(new Vector2(0, bounceForce));
             GetComponent<BoxCollider2D>().enabled = false;
             gooseAttack.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("Goose Dazed");
             StartCoroutine(Dazed());
         }
     }

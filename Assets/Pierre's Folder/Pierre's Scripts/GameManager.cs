@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public int deathCount = 0;
     public bool noDrinks = true;
+    public bool vent = false;
     private Player_Movement movement;
     private GameObject player;
     private GameObject playerAnimator;
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
     
         
 
-        void Awake()
+        void Start()
         {
             if (instance == null)
             {
@@ -34,17 +35,13 @@ public class GameManager : MonoBehaviour
 
             DontDestroyOnLoad(gameObject);
 
-            player = GameObject.FindWithTag("Player");
-            spawnPoint = GameObject.FindWithTag("Spawn");
-            playerAnimator = GameObject.FindWithTag("PlayerAnimator");
-            playerCollider = player.GetComponent<CircleCollider2D>();
-            playerBoxCollider = player.GetComponent<BoxCollider2D>();
-            playerRB = player.GetComponent<Rigidbody2D>();
-            movement = player.GetComponent<Player_Movement>();
+            ResetPlayer();
         }
 
     public void KillPlayer()
     {
+        
+
         //Turn off Player_Movement
         movement.enabled = false;
         playerRB.velocity = new Vector3(0, playerRB.velocity.y, 0);
@@ -73,5 +70,16 @@ public class GameManager : MonoBehaviour
         playerAnimator.GetComponent<Animator>().SetBool("isDead", false);
         playerAnimator.GetComponent<Animator>().SetBool("diced", false);
         player.transform.position = spawnPoint.transform.position;
+    }
+
+    public void ResetPlayer()
+    {
+        player = GameObject.FindWithTag("Player");
+        spawnPoint = GameObject.FindWithTag("Spawn");
+        playerAnimator = GameObject.FindWithTag("PlayerAnimator");
+        playerCollider = player.GetComponent<CircleCollider2D>();
+        playerBoxCollider = player.GetComponent<BoxCollider2D>();
+        playerRB = player.GetComponent<Rigidbody2D>();
+        movement = player.GetComponent<Player_Movement>();
     }
 }
