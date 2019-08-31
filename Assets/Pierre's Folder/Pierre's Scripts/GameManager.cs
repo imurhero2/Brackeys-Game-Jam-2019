@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int deathCount = 0;
+    public bool noDrinks = true;
     private Player_Movement movement;
     private GameObject player;
     private GameObject playerAnimator;
