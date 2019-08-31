@@ -5,6 +5,8 @@ using UnityEngine;
 public class Chair : MonoBehaviour
 {
     [SerializeField] private GameObject prompt;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Animator chairAnim;
     private bool inRange;
     private GameManager gManager;
 
@@ -18,6 +20,7 @@ public class Chair : MonoBehaviour
         if (inRange == true && Input.GetButtonDown("Interact"))
         {
             ChairEat();
+            chairAnim.SetBool("eat", true);
         }
     }
 
@@ -36,10 +39,17 @@ public class Chair : MonoBehaviour
     private void ChairEat()
     {
         FindObjectOfType<AudioManager>().Stop();
-        FindObjectOfType<AudioManager>().Play("Chair Death");
+        StartCoroutine(StartNaration());
+        player.GetComponent<SpriteRenderer>().enabled = false;
         gManager.KillPlayer();
 
         //Load Next Scene
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator StartNaration()
+    {
+        yield return new WaitForSeconds(1);
+        FindObjectOfType<AudioManager>().Play("Chair Death");
     }
 }
