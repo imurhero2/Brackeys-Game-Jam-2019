@@ -59,4 +59,14 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+    public void StopMusic(string name)
+    {
+        foreach (Sound s in sounds)
+        {
+            if (s.name == "music" || s.name == "Broken Music")
+            {
+                s.source.Stop();
+            }
+        }
+    }
 }

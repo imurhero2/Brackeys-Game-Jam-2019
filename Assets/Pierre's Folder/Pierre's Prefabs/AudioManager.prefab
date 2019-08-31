@@ -134,9 +134,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: No Drinks
-    clip: {fileID: 8300000, guid: 0ac64199602276b4ab1a9bfaea87c481, type: 3}
-    volume: 0.906
+  - name: Chair Win
+    clip: {fileID: 8300000, guid: ae5d83e0d05088741afaea99a4de3f9e, type: 3}
+    volume: 1
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: Broken Music
+    clip: {fileID: 8300000, guid: f37941baee92e924b956460a260c2ff7, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Boss Music
+    clip: {fileID: 8300000, guid: 38170344e99e2da47a759e4570591c6b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
     source: {fileID: 0}

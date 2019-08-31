@@ -7,6 +7,8 @@ public class Door : MonoBehaviour
     [SerializeField] private GameManager manager;
     [SerializeField] private GameObject prompt;
     [SerializeField] private NarrationManager1 nManager;
+    [SerializeField] private GameObject explosion;
+    [SerializeField] private SpriteRenderer player;
     private bool inRange;
     
     void Update()
@@ -32,6 +34,11 @@ public class Door : MonoBehaviour
     private void KillPlayer()
     {
         Debug.Log("DED");
+        explosion.SetActive(true);
+        StartCoroutine(RemoveExplosion());
+        player.enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
         FindObjectOfType<AudioManager>().Stop();
         FindObjectOfType<AudioManager>().Play("1-1 Door Death");
         //Play Animation
@@ -46,5 +53,11 @@ public class Door : MonoBehaviour
     {
         yield return new WaitForSeconds(15);
         FindObjectOfType<AudioManager>().Play("1-1 Spike Reminder");
+    }
+
+    IEnumerator RemoveExplosion()
+    {
+        yield return new WaitForSeconds(1);
+        explosion.SetActive(false);
     }
 }
