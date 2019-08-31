@@ -74,10 +74,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 8300000, guid: 5750026ae62e36f4398df7b16ebc73ab, type: 3}
-    volume: 0
-    pitch: 0
+  - name: No Drinks
+    clip: {fileID: 8300000, guid: 0ac64199602276b4ab1a9bfaea87c481, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Jump

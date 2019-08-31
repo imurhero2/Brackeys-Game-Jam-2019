@@ -66,10 +66,10 @@ public class Player_Controller : MonoBehaviour
             if (!crouch)
             {
                 myAnimator.SetBool("crouch", false);
-                if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
-                {
-                    crouch = true;
-                }
+                //if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
+               // {
+                //    crouch = true;
+               // }
             }
 
             if (crouch)
