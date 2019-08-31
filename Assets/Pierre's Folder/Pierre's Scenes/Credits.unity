@@ -224,15 +224,17 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "A List of People Who Think They're Important\r\n\r\nPierre Gaboriau \r\n\r\nProbably
     did this all by himself.\r\n\r\n\r\nJean Perez\r\n\r\nThe dude taking all the
-    credit for Pierre's work.\r\n\r\n\r\nSteven Murray\r\n\r\nThe reason you have
-    that sad, loveable character and not some stick figure running around on a blank
-    background\r\n\r\n\r\nChris Pillow\r\n\r\nHe made mouth noises for you so that
-    every time you died it was satisfying; and all without charging you top dollar.
-    You better thank him.\r\n\r\n\r\nJeremy Faber\r\n\r\nAll those sweet tunes came
-    outta this guys head.\r\nHey! That's kinda like a metaphor.\r\nRemember when your
-    brains came out of your head? Beautiful. Just like his music.\r\n\r\nMaurice Roberts\r\n\r\nThe
-    pathological liar you grew to hate.\r\nTo be fair, he's paid really well to lead
-    you astray..\r\n\r\n\r\n..Wait, I'm not being paid for this?\r\nWhat the-\r\n\r\nFIN"
+    credit for Pierre's work.\r\n\r\n\n\nJean-Paul Gaboriau\r\n\r\nA programming advisor
+    and the other dude taking all the credit for Pierre's work\n\n\r\n\nSteven Murray\r\n\r\nThe
+    reason you have that sad, loveable character and not some stick figure running
+    around on a blank background\r\n\r\n\r\nChris Pillow\r\n\r\nHe made mouth noises
+    for you so that every time you died it was satisfying; and all without charging
+    you top dollar. You better thank him.\r\n\r\n\r\nJeremy Faber\r\n\r\nAll those
+    sweet tunes came outta this guys head.\r\nHey! That's kinda like a metaphor.\r\nRemember
+    when your brains came out of your head? Beautiful. Just like his music.\r\n\r\nMaurice
+    Roberts\r\n\r\nThe pathological liar you grew to hate.\r\nTo be fair, he's paid
+    really well to lead you astray..\r\n\r\n\r\n..Wait, I'm not being paid for this?\r\nWhat
+    the-\r\n\r\nFIN"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -277,7 +279,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 823
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -301,12 +303,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -652.91626, w: -1800.6337}
   m_textInfo:
     textComponent: {fileID: 484038609}
-    characterCount: 830
+    characterCount: 937
     spriteCount: 0
-    spaceCount: 156
-    wordCount: 137
+    spaceCount: 177
+    wordCount: 153
     linkCount: 0
-    lineCount: 43
+    lineCount: 51
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -341,7 +343,7 @@ Animation:
   m_GameObject: {fileID: 484038607}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: adc3ba4d15586ea40945e3371a4eb714, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: adc3ba4d15586ea40945e3371a4eb714, type: 2}
   m_WrapMode: 0
