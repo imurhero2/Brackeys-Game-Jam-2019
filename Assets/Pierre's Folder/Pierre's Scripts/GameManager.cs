@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
 
     private void Respawn()
     {
+        playerAnimator.GetComponent<SpriteRenderer>().enabled = true;
         movement.enabled = true;
         playerCollider.enabled = true;
         playerBoxCollider.enabled = true;
