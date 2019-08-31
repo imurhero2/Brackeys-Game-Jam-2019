@@ -152,3 +152,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: Spikes Fine
+    clip: {fileID: 8300000, guid: 998c7ecba0954b141aacdcbf7443e28e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

@@ -18,6 +18,8 @@ public class Spikes : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             //Play Spike Enter Voice Over
+            FindObjectOfType<AudioManager>().Stop();
+            FindObjectOfType<AudioManager>().Play("Spikes Fine");
         }
     }
 
